@@ -1,0 +1,263 @@
+/* تصفير هوامش المتصفح لضمان وصول العناصر للحواف */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cart-page {
+  width: 100%;
+}
+
+/* تنسيق الغلاف */
+.cart-cover {
+  position: relative; /* ضروري لتثبيت الناف بار بالنسبة له */
+  background-size: cover;
+  background-position: center;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* توسيط النصوص */
+  color: white;
+  width: 100%;
+}
+
+/* نصوص الغلاف لضمان عدم تداخلها مع الناف بار */
+.cover-text {
+  padding-top: 60px; /* دفع النص للأسفل قليلاً ليبتعد عن الناف بار */
+  text-align: center;
+}
+.cover-text p{
+  color: cornsilk;
+}
+
+.quantity-control button {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.cart-cover h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* شريط التنقل العلوي */
+.carrt-nav-overlay {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* خلفية سوداء شفافة خفيفة */
+  padding: 15px 50px;
+  display: flex;
+  justify-content: flex-start; /* الروابط تبدأ من اليسار */
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffc107;
+}
+
+.profile-icon, .cart-icon {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* تنسيق الجدول والصور */
+.cart-product-img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.quantity-input {
+  width: 60px;
+  text-align: center;
+}
+
+.btn-carrt-action {
+  background-color: #088178;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.btn-carrt-action:hover {
+  background-color: #066b63;
+}
+
+/* Footer Styles */
+.footer-section {
+  background-color: #fff;
+  padding: 60px 0 20px 0;
+  border-top: 1px solid #eee;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #465b52;
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  font-size: 14px;
+  color: #465b52;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  cursor: pointer; /* يجعل الماوس يتحول ليد */
+}
+
+.footer-col a:hover {
+  color: #088178; /* لون التفاعل عند المرور */
+  padding-left: 5px; /* حركة بسيطة عند الهوفر */
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons .icon {
+  color: #465b52;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.social-icons .icon:hover {
+  color: #088178;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #088178;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .carrt-nav-overlay {
+    padding: 10px 15px;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+  }
+  
+  .cart-cover {
+    min-height: 250px;
+  }
+  
+  .cart-cover h1 {
+    font-size: 32px;
+  }
+  
+  .cover-text {
+    padding-top: 80px; /* To account for wrapped navbar */
+  }
+  
+  /* Table adjustments */
+  .cart-table th, .cart-table td {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  
+  .cart-product-img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+  }
+  
+  .nav-links a {
+    font-size: 13px;
+  }
+  
+  .cart-cover h1 {
+    font-size: 26px;
+  }
+  
+  .cover-text p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  
+  .cart-product-img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .quantity-control button {
+    width: 20px;
+    height: 20px;
+  }
+}

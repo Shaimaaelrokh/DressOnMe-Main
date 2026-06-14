@@ -1,0 +1,35 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}Order Update - Order #{{ order_id }} - DressOnMe{% endblock %}
+
+{% block header_title %}Order Update{% endblock %}
+{% block header_subtitle %}Status: {{ status }}{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>Hi {{ name }}!</h2>
+    <p>We're sending you an update regarding Order #{{ order_id }}. The status has been updated to <strong>{{ status }}</strong>.</p>
+</div>
+
+<div class="info-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-left: none;">
+    <p style="margin: 0; text-align: center;">
+        <span style="font-size: 14px; color: #ffffff; display: block; margin-bottom: 5px;">New Status</span>
+        <span style="font-size: 28px; font-weight: 700; color: #ffffff;">{{ status }}</span>
+    </p>
+</div>
+
+<div class="email-content">
+    <h3 style="color: #333; font-size: 18px; margin-top: 30px; margin-bottom: 15px;">Order Details</h3>
+    <p style="color: #666; line-height: 1.6;">Your order is currently being processed with the new status. {% if status == 'Shipped' %}You should receive it within 3-5 business days.{% elif status == 'Delivered' %}We hope you enjoy your purchase!{% endif %}</p>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="#" class="button">View Order Status</a>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <p style="font-size: 14px; color: #666; text-align: center;">
+        If you have any questions, <a href="mailto:{{ admin_email }}" style="color: #667eea;">we're here to help!</a>
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}New Sale! - Order #{{ order_id }} - DressOnMe{% endblock %}
+
+{% block header_title %}You have a new sale!{% endblock %}
+{% block header_subtitle %}Keep the momentum going{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>Hi {{ seller_name }}!</h2>
+    <p>Congratulations! A customer has just purchased your items. Here's what you need to prepare for shipment.</p>
+</div>
+
+<div class="info-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-left: none;">
+    <p style="margin: 0; text-align: center;">
+        <span style="font-size: 14px; color: #ffffff; display: block; margin-bottom: 5px;">Order Number</span>
+        <span style="font-size: 28px; font-weight: 700; color: #ffffff;">#{{ order_id }}</span>
+    </p>
+</div>
+
+<div class="email-content">
+    <h3 style="color: #333; font-size: 18px; margin-top: 30px; margin-bottom: 15px;">Items Sold</h3>
+    
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <thead>
+            <tr style="background-color: #f8f9fa; border-bottom: 2px solid #e0e0e0;">
+                <th style="padding: 12px; text-align: left; color: #666; font-weight: 600;">Item</th>
+                <th style="padding: 12px; text-align: center; color: #666; font-weight: 600;">Qty</th>
+                <th style="padding: 12px; text-align: right; color: #666; font-weight: 600;">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+                <td style="padding: 15px 12px;">
+                    <strong style="color: #333;">{{ item.product_name }}</strong>
+                    {% if item.size %}<br><span style="font-size: 13px; color: #999;">Size: {{ item.size }}</span>{% endif %}
+                </td>
+                <td style="padding: 15px 12px; text-align: center; color: #666;">{{ item.quantity }}</td>
+                <td style="padding: 15px 12px; text-align: right; color: #333; font-weight: 600;">${{ item.subtotal }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr style="background-color: #f8f9fa;">
+                <td colspan="2" style="padding: 15px 12px; text-align: right; font-weight: 700; color: #333;">Your Revenue:</td>
+                <td style="padding: 15px 12px; text-align: right; font-weight: 700; color: #667eea; font-size: 18px;">${{ seller_revenue }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="email-content">
+    <h3 style="color: #333; font-size: 18px; margin-top: 30px; margin-bottom: 15px;">Shipping Instructions</h3>
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #666; font-size: 14px;">Please prepare these items and ship them to our warehouse or the customer as per your agreement. Once shipped, update the order status in your dashboard to notify the customer.</p>
+    </div>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="#" class="button">View Seller Dashboard</a>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <p style="font-size: 14px; color: #666; text-align: center;">
+        Need help? <a href="mailto:{{ admin_email }}" style="color: #667eea;">Contact Seller Support</a>
+    </p>
+</div>
+{% endblock %}

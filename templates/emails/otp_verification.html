@@ -1,0 +1,31 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}Your OTP Code - DressOnMe{% endblock %}
+
+{% block header_title %}Verification Code{% endblock %}
+{% block header_subtitle %}Secure Login{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>Hello {{ user_name }}!</h2>
+    <p>We received a request to sign in to your account. Please use the verification code below to complete your login:</p>
+</div>
+
+<div class="info-box" style="text-align: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-left: none; padding: 30px;">
+    <p style="font-size: 14px; color: #666; margin-bottom: 10px; font-weight: 600;">YOUR VERIFICATION CODE</p>
+    <p style="font-size: 42px; font-weight: 700; letter-spacing: 8px; color: #667eea; margin: 15px 0; font-family: 'Courier New', monospace;">{{ otp_code }}</p>
+    <p style="font-size: 13px; color: #999; margin-top: 10px;">This code will expire in 10 minutes</p>
+</div>
+
+<div class="email-content">
+    <p style="margin-top: 25px;">If you didn't request this code, please ignore this email or contact our support team if you have concerns about your account security.</p>
+    
+    <div class="divider"></div>
+    
+    <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 4px; margin-top: 20px;">
+        <p style="margin: 0; color: #856404; font-size: 14px;">
+            <strong>Security Tip:</strong> Never share this code with anyone. Our team will never ask for your verification code.
+        </p>
+    </div>
+</div>
+{% endblock %}

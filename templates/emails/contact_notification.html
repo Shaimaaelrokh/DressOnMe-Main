@@ -1,0 +1,47 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}New Contact Message - DressOnMe{% endblock %}
+
+{% block header_title %}New Contact Message{% endblock %}
+{% block header_subtitle %}Action Required{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>New Message Received</h2>
+    <p>A customer has submitted a new contact form message that requires your attention.</p>
+</div>
+
+<div class="info-box">
+    <p style="margin-bottom: 15px;"><strong>Message Details:</strong></p>
+    
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: 600; width: 120px;">From:</td>
+            <td style="padding: 8px 0; color: #333;">{{ contact_name }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: 600;">Email:</td>
+            <td style="padding: 8px 0; color: #333;"><a href="mailto:{{ contact_email }}" style="color: #667eea;">{{ contact_email }}</a></td>
+        </tr>
+        <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: 600;">Subject:</td>
+            <td style="padding: 8px 0; color: #333;">{{ subject }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: 600;">Submitted:</td>
+            <td style="padding: 8px 0; color: #333;">{{ submitted_at }}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="email-content">
+    <p style="margin-bottom: 10px;"><strong>Message:</strong></p>
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #667eea;">
+        <p style="margin: 0; color: #333; white-space: pre-wrap;">{{ message }}</p>
+    </div>
+    
+    <div style="margin-top: 25px; text-align: center;">
+        <a href="mailto:{{ contact_email }}?subject=Re: {{ subject }}" class="button">Reply to Customer</a>
+    </div>
+</div>
+{% endblock %}

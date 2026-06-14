@@ -1,0 +1,38 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}Thank You for Contacting Us - DressOnMe{% endblock %}
+
+{% block header_title %}Message Received{% endblock %}
+{% block header_subtitle %}We'll get back to you soon!{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>Thank You, {{ contact_name }}!</h2>
+    <p>We've received your message and appreciate you taking the time to reach out to us. Our support team will review your inquiry and respond within 24-48 hours.</p>
+</div>
+
+<div class="info-box">
+    <p style="margin-bottom: 10px;"><strong>Your Message Details:</strong></p>
+    <p style="margin: 5px 0;"><strong>Subject:</strong> {{ subject }}</p>
+    <p style="margin: 5px 0;"><strong>Message:</strong></p>
+    <p style="margin: 10px 0; padding: 10px; background-color: #ffffff; border-radius: 4px;">{{ message }}</p>
+    <p style="margin: 5px 0; font-size: 13px; color: #999;">Submitted on {{ submitted_at }}</p>
+</div>
+
+<div class="email-content">
+    <p>In the meantime, you might find these resources helpful:</p>
+    
+    <div style="margin: 20px 0;">
+        <a href="#" class="button">Visit Help Center</a>
+        <a href="#" class="button" style="background: #ffffff; color: #667eea; border: 2px solid #667eea;">Browse FAQs</a>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <p style="font-size: 14px; color: #666;">
+        <strong>Need immediate assistance?</strong><br>
+        Email: <a href="mailto:{{ admin_email }}" style="color: #667eea;">{{ admin_email }}</a><br>
+        We're here to help Monday - Friday, 9 AM - 6 PM EST
+    </p>
+</div>
+{% endblock %}

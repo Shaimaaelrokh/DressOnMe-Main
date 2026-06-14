@@ -1,0 +1,41 @@
+{% extends "emails/base_email.html" %}
+
+{% block title %}Order Received - Order #{{ order_id }} - DressOnMe{% endblock %}
+
+{% block header_title %}Order Received!{% endblock %}
+{% block header_subtitle %}We've got your order request{% endblock %}
+
+{% block content %}
+<div class="email-content">
+    <h2>Hi {{ customer_name }}!</h2>
+    <p>Thanks for choosing us! We've received your order #{{ order_id }} and it's currently awaiting payment or processing.</p>
+</div>
+
+<div class="info-box" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); border-left: none;">
+    <p style="margin: 0; text-align: center;">
+        <span style="font-size: 14px; color: #2c3e50; display: block; margin-bottom: 5px;">Order Number</span>
+        <span style="font-size: 28px; font-weight: 700; color: #2c3e50;">#{{ order_id }}</span>
+    </p>
+</div>
+
+<div class="email-content">
+    <h3 style="color: #333; font-size: 18px; margin-top: 30px; margin-bottom: 15px;">Next Steps</h3>
+    
+    {% if order_status == 'PENDING' %}
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="margin: 0 0 10px 0; color: #333;"><strong>💳 Complete Payment</strong></p>
+        <p style="margin: 0; color: #666; font-size: 14px;">If you haven't completed your payment yet, please follow the link in your dashboard to ensure your items are reserved.</p>
+    </div>
+    {% endif %}
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="#" class="button">View Order Details</a>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <p style="font-size: 14px; color: #666; text-align: center;">
+        Expected delivery: 3-7 business days after payment confirmation.
+    </p>
+</div>
+{% endblock %}

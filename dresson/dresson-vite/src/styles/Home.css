@@ -1,0 +1,727 @@
+.home-page {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* المسافة بين السكشنات */
+section {
+  margin-bottom: 40px;
+}
+
+/* HERO */
+/* HERO */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-aspect-ratio-img {
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+  display: none;
+}
+
+/* Navbar overlay */
+
+.repair-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  /* يتحكم في ارتفاع الصورة */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* اختيارياً: يعطي تأثير parallax جميل */
+  color: white;
+}
+
+.banner-1 {
+  background-position: 15% center !important;
+}
+
+.banner-2 {
+  background-position: 95% center !important;
+}
+
+.banner-content h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.banner-content span {
+  color: #ff4d4d;
+  /* اللون الأحمر للخصم كما في الصورة */
+}
+
+
+.promo-card {
+  position: relative;
+  height: 400px;
+  /* ارتفاع الصور الكبيرة */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.promo-card.small {
+  height: 250px;
+  /* ارتفاع الصور الصغيرة */
+  align-items: flex-end;
+  /* وضع النص في الأسفل */
+  padding: 20px;
+}
+
+.promo-card:hover {
+  transform: scale(1.02);
+  /* تأثير بسيط عند الوقوف بالماوس */
+}
+
+/* طبقة تظليل خفيفة لتوضيح الكلام */
+.promo-overlay {
+  z-index: 2;
+  text-align: left;
+}
+
+.promo-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.promo-card h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.red-text {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.promo-card .btn {
+  border-width: 2px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.banner-content .btn {
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links button.nav-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links button.nav-link:hover {
+  color: #f8d6e6;
+}
+
+/* أيقونة عربة التسوق ذهبية */
+.cart-icon {
+  color: gold;
+  cursor: pointer;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 3px #000;
+  transition: 0.3s;
+}
+
+.cart-icon:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* overlay محتوى الهيرو */
+.hero-section .overlay {
+  background: rgba(128, 0, 64, 0.4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-title {
+  font-size: 5rem;
+  letter-spacing: 8px;
+  color: white;
+  font-weight: 700;
+}
+
+.brand-sub {
+  color: #f8d6e6;
+  font-size: 1.2rem;
+}
+
+/* VALUES */
+.value-card {
+  height: 250px;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
+}
+
+.value-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.value-card h5,
+.value-card p {
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+
+.creative-mid-section {
+  height: 100vh;
+  width: 70%;
+  margin: 50px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background-image: url("../assets/malek.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.creative-mid-section h1,
+h2,
+p {
+  color: #321111;
+}
+
+.creative-mid-overlay {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.creative-mid-content {
+  color: white;
+  padding-left: 60px;
+  max-width: 500px;
+}
+
+.small-title {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.mid-title {
+  font-size: 3rem;
+  /* أصغر من Hero */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.mid-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+
+
+
+
+/* FEATURED */
+.featured-img {
+  height: 90vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.featured {
+  padding: 0 50px;
+  /* مساحة من اليمين والشمال */
+}
+
+.featured-text {
+  max-width: 400px;
+  text-align: center;
+}
+
+.featured-text h2 {
+  font-size: 3rem;
+  color: burlywood;
+}
+
+.featured-text p {
+  color: azure;
+}
+
+.btn {
+  background-color: antiquewhite;
+  color: black;
+}
+
+/* ───────────────────────────────────────────
+   NAVBAR - HAMBURGER + LOGO + ICONS
+─────────────────────────────────────────── */
+.navbar-overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.navbar-left-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nav-icon-btn:hover {
+  transform: scale(1.15);
+  color: #f8d6e6;
+}
+
+/* أيقونات اليمين */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icon {
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
+  color: #f8d6e6;
+}
+
+/* ── زرار الهامبرجر ── */
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  z-index: 1100;
+  position: relative;
+}
+
+.ham-line {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: white;
+  border-radius: 4px;
+  transition: transform 0.35s ease, opacity 0.35s ease, width 0.35s ease;
+  transform-origin: center;
+}
+
+/* تحويل الهامبرجر لـ X */
+.hamburger-btn .ham-line.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn .ham-line.open:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-btn .ham-line.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── القايمة الجانبية ── */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  left: auto;
+  width: 290px;
+  height: 100vh;
+  z-index: 1050;
+  background: #0e0e0e;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: none;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-open {
+  right: 0;
+  left: auto;
+}
+
+/* زرار الإغلاق داخل القايمة */
+.side-menu-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.side-menu-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ── اللوجو في أعلى القايمة ── */
+.side-menu-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.side-menu-logo img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 4px 16px rgba(255, 255, 255, 0.12));
+}
+
+/* ── محتوى القايمة ── */
+.side-menu-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 16px 24px;
+  gap: 2px;
+  flex: 1;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 12px 18px;
+  border-radius: 10px;
+  transition: background 0.22s, color 0.22s, transform 0.2s, padding-left 0.22s;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+/* خط جانبي ملوّن عند الـ hover */
+.side-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ff4d4d, #ff9d9d);
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+
+.side-link:hover::before {
+  opacity: 1;
+}
+
+.side-link:hover {
+  background: rgba(255, 255, 255, 0.055);
+  color: #fff;
+  padding-left: 26px;
+}
+
+.side-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.side-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 10px 4px;
+  border-radius: 2px;
+}
+
+/* أيقونات أسفل القايمة */
+.side-menu-bottom-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 20px 16px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-top: auto;
+}
+
+.side-bottom-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.side-bottom-icon:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.15);
+}
+
+/* Backdrop خلف القايمة */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+/* ───────────────────────────────────────────
+   RESPONSIVE - الصور تبان كاملة
+─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* صورة الهيرو الخلفية */
+  .hero-aspect-ratio-img {
+    display: block;
+    /* يظهر كعنصر مخفي لتحديد الارتفاع بدقة بناءً على أبعاد الصورة الأصلية */
+  }
+
+  .hero-section {
+    height: auto;
+    min-height: 0;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center top;
+    margin-bottom: 0;
+  }
+
+  /* صور البانر */
+  .repair-banner {
+    height: auto;
+    min-height: 220px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  /* البطاقات الكبيرة */
+  .promo-card {
+    height: auto;
+    min-height: 280px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* البطاقات الصغيرة */
+  .promo-card.small {
+    height: auto;
+    min-height: 200px;
+  }
+
+  /* value cards */
+  .value-card {
+    height: auto;
+    min-height: 200px;
+    background-size: cover;
+  }
+
+  /* قسم الـ creative mid */
+  .creative-mid-section {
+    width: 95%;
+    height: auto;
+    min-height: 60vh;
+    margin: 30px auto;
+  }
+
+  .creative-mid-content {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+
+  .mid-title {
+    font-size: 2rem;
+  }
+
+  /* featured */
+  .featured-img {
+    height: auto;
+    min-height: 50vh;
+    background-size: cover;
+  }
+
+  /* brand title */
+  .brand-title {
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+  }
+
+  /* navbar */
+  .navbar-overlay {
+    padding: 0 10px;
+    height: 45px;
+  }
+
+  .navbar-left-icons {
+    gap: 8px;
+  }
+
+  .nav-icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+
+
+  /* القايمة الجانبية */
+  .side-menu {
+    width: 260px;
+  }
+}
+
+.nav-logo-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  font-family: "Playfair Display", "Cinzel", "Times New Roman", serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav-logo-text {
+    position: static;
+    transform: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .promo-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .mid-title {
+    font-size: 1.7rem;
+  }
+}

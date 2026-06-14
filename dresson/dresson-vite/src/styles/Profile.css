@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Facebook-Style Profile Page Layout
+   ========================================================================== */
+
+/* Main Header Container */
+.profile-header-container {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.profile-header-container.dark-mode {
+  background-color: #242526; /* Facebook dark mode header color */
+  color: #e4e6eb;
+}
+
+/* Cover Image Container */
+.profile-cover-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background-color: #f0f2f5;
+}
+
+.profile-header-container.dark-mode .profile-cover-container {
+  background-color: #121212;
+}
+
+.profile-cover-img {
+  width: 100%;
+  height: auto; /* Scales dynamically based on the image's original ratio */
+  display: block;
+}
+
+/* Top Right Actions (Home, Shop, Cart) over Cover */
+.cover-overlay-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Profile Info Section (Avatar, Name, Actions) */
+.profile-info-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Align at the bottom of the avatar */
+  position: relative;
+  top: -30px; /* Pull it up into the cover */
+  margin-bottom: -30px; /* Counteract the pull */
+}
+
+/* Left Side: Avatar and Name */
+.profile-info-left {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Avatar */
+.profile-avatar-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.profile-avatar {
+  width: 168px; /* Facebook standard */
+  height: 168px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #fff;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.dark-mode .profile-avatar {
+  border-color: #242526;
+  background-color: #242526;
+}
+
+/* Name */
+.profile-name-container {
+  padding-bottom: 15px; /* Align nicely with avatar */
+}
+
+.profile-name-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.profile-name-text.light-mode { color: #050505; }
+.profile-name-text.dark-mode { color: #e4e6eb; }
+
+/* Right Side: Action Buttons */
+.profile-info-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+/* Base button style for profile actions */
+.profile-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary-action {
+  background-color: #0866ff; /* FB Blue */
+  color: #fff;
+}
+.btn-primary-action:hover { background-color: #0054d1; color: #fff;}
+
+.btn-secondary-action {
+  background-color: #e4e6eb;
+  color: #050505;
+}
+.btn-secondary-action:hover { background-color: #d8dadf; }
+
+.dark-mode .btn-secondary-action {
+  background-color: #3a3b3c;
+  color: #e4e6eb;
+}
+.dark-mode .btn-secondary-action:hover { background-color: #4e4f50; }
+
+.more-btn {
+  padding: 8px 14px;
+}
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .profile-avatar { width: 132px; height: 132px; }
+  .profile-name-text { font-size: 1.75rem; }
+}
+
+

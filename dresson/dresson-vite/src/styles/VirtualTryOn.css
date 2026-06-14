@@ -1,0 +1,101 @@
+.vton-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.vton-modal-content {
+  background: #1e1e24;
+  color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  text-align: center;
+}
+
+.vton-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.vton-upload-area {
+  border: 2px dashed #4a4a5a;
+  border-radius: 10px;
+  padding: 40px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vton-upload-area:hover {
+  border-color: #8c8cff;
+  background: rgba(140, 140, 255, 0.1);
+}
+
+.vton-file-input {
+  display: none;
+}
+
+.vton-preview-img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  margin: 20px 0;
+  object-fit: contain;
+}
+
+.vton-submit-btn {
+  background: linear-gradient(135deg, #6e48aa, #9d50bb);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s;
+}
+
+.vton-submit-btn:hover {
+  transform: scale(1.05);
+}
+
+.vton-submit-btn:disabled {
+  background: #444;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vton-loading-spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: vton-spin 1s ease-in-out infinite;
+}
+
+@keyframes vton-spin {
+  to { transform: rotate(360deg); }
+}
+
+.vton-result-area h3 {
+  color: #a5f2a5;
+  margin-bottom: 15px;
+}
