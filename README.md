@@ -47,7 +47,10 @@ The easiest way to run the entire stack (Database, Backend, and Frontend) is usi
 ## 💾 Backup & Restore Guide (How to delete and bring it back)
 
 ### 1. What to Backup BEFORE Deleting
-Since GitHub does not store heavy AI models or secret files, you **MUST** save these to Google Drive before deleting the project from your device:
+Since GitHub does not store heavy AI models or secret files, you **MUST** save these to Google Drive before deleting the project from your device.
+
+> **🔗 Google Drive Link for AI Models:** [PUT_YOUR_DRIVE_LINK_HERE]
+
 - `.env` (Contains your secret keys)
 - `db.sqlite3` (Your database with all users and products)
 - `media/` folder (If you have uploaded product images)
