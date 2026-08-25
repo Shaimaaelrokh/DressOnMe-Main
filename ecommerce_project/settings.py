@@ -28,7 +28,7 @@ EXCHANGE_API_KEY = os.getenv('EXCHANGE_API_KEY')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Always use environment variables for sensitive data in production
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-3tfiv191_(f_=2tb3pq8^#i596$7ttu@olutd7^n*s^+nkw9+l')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -237,17 +237,17 @@ EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.smtp.Email
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'bsnt7822@gmail.com')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'nnqxfgprhwqzyhjd')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
 ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', EMAIL_HOST_USER)
 EMAIL_TIMEOUT = 10  # seconds
 
 # Stripe Configuration
 # Get your keys from https://dashboard.stripe.com/test/apikeys
-STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', 'mk_1TWhPjCiUzEupKLTgZNLObXc')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'mk_1TWhROCiUzEupKLTGhHZoHig')
-STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET', 'acct_1TWhPiCiUzEupKLT')
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
 
 # Frontend URL for redirections
 FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')

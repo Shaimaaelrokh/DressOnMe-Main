@@ -314,7 +314,7 @@ class VerifyDashboardPinAPIView(generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         pin = request.data.get('pin')
-        correct_pin = os.getenv('DASHBOARD_PIN', '7894561230+789456120$5')
+        correct_pin = os.getenv('DASHBOARD_PIN')
         
         if pin == correct_pin:
             return Response({"success": True})
@@ -342,5 +342,3 @@ class LogoutView(generics.GenericAPIView):
             return Response({"detail": "Logout successful, token blacklisted"}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-

@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 from rest_framework_simplejwt.tokens import AccessToken
 from django.contrib.auth import get_user_model
 from .models import Conversation, Message
-from .services import get_bot_response
+from .services import get_bot_response  
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):

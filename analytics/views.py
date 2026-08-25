@@ -21,12 +21,12 @@ class DashboardStatsAPIView(APIView):
 
         import os
         dashboard_pin = request.headers.get('X-Dashboard-Pin') or request.META.get('HTTP_X_DASHBOARD_PIN')
-        correct_pin = os.getenv('DASHBOARD_PIN', '7894561230+789456120$5').strip()
+        correct_pin = os.getenv('DASHBOARD_PIN', '').strip()
         
         if dashboard_pin: dashboard_pin = dashboard_pin.strip()
         
         if not dashboard_pin or dashboard_pin != correct_pin:
-            return Response({"detail": f"Access Denied: Valid Dashboard PIN required. Got: {dashboard_pin}, Expected: {correct_pin}"}, status=403)
+            return Response({"detail": "Access Denied: Valid Dashboard PIN required."}, status=403)
             
         effective_role = User.Role.ADMIN
 
