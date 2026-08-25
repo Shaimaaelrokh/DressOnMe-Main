@@ -44,32 +44,65 @@ The easiest way to run the entire stack (Database, Backend, and Frontend) is usi
    - **Backend API**: [http://localhost:8000](http://localhost:8000)
    - **Admin Panel**: [http://localhost:8000/admin](http://localhost:8000/admin)
 
-## 🛠️ Manual Installation
+## 💾 Backup & Restore Guide (How to delete and bring it back)
 
-### Backend Setup
-1. Create a virtual environment:
+### 1. What to Backup BEFORE Deleting
+Since GitHub does not store heavy AI models or secret files, you **MUST** save these to Google Drive before deleting the project from your device:
+- `.env` (Contains your secret keys)
+- `db.sqlite3` (Your database with all users and products)
+- `media/` folder (If you have uploaded product images)
+- **AI Models**: Any `.pth`, `.pt`, `.h5` or large model files you have in your AI folders.
+
+### 2. How to Restore & Install Everything
+
+#### Step A: Download Code & Files
+1. Clone the repository from GitHub:
+   ```bash
+   git clone <your-github-repo-link>
+   ```
+2. Download `.env`, `db.sqlite3`, `media/`, and **AI Models** from Google Drive and place them in their original folders.
+
+#### Step B: Backend & AI Setup (Python)
+1. Create and activate a virtual environment (Windows):
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   venv\Scripts\activate
    ```
-2. Install dependencies:
+2. Install all required backend and AI libraries:
+   *You can install everything at once using:*
    ```bash
    pip install -r requirements.txt
    ```
-3. Run migrations and start server:
+   *For your reference, here are the core AI and Backend libraries being installed:*
+   ```bash
+   # Core Backend
+   pip install django>=5.0 djangorestframework djangorestframework-simplejwt django-cors-headers python-dotenv psycopg2-binary
+   
+   # AI & Image Processing (The heavy libraries)
+   pip install torch torchvision diffusers transformers accelerate
+   pip install mediapipe==0.10.9 opencv-python==4.9.0.80 opencv-contrib-python==4.9.0.80 Pillow numpy<2.0.0
+   
+   # WebSockets & Others
+   pip install channels daphne stripe drf-spectacular requests django-filter
+   ```
+3. Run migrations and start the server:
    ```bash
    python manage.py migrate
    python manage.py runserver
    ```
 
-### Frontend Setup
-1. Navigate to frontend:
+#### Step C: Frontend Setup (React/Vite)
+1. Open a new terminal and navigate to the frontend folder:
    ```bash
-   cd frontend
+   cd dresson/dresson-vite
    ```
-2. Install and run:
+2. Install frontend dependencies (React, Vite, GSAP, Framer Motion, AI SDKs):
    ```bash
    npm install
+   ```
+   *This automatically installs libraries like: `@google/generative-ai`, `@anthropic-ai/sdk`, `framer-motion`, `gsap`, `axios`, `bootstrap`, `react-router-dom`.*
+3. Run the website:
+   ```bash
    npm run dev
    ```
 
